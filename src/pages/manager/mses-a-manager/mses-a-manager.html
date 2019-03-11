@@ -1,0 +1,284 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{auditType}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="dash" no-padding>
+    <ion-item class="taskList">
+      <ion-label align=center style="color: white">{{auditType}}
+      </ion-label>
+    </ion-item>
+    <div class="hrl"></div>
+    <ion-item class="select-section " *ngIf="notpilot">
+      <ion-label>Select Pilot</ion-label>
+      <ion-select [(ngModel)]="pilotData" (ionChange)="pilotChange($event)">
+        <ion-option *ngFor="let pilot of pilotList" [value]='pilot.id'>{{pilot.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="select-section ">
+      <ion-label>Select Sub-Activity</ion-label>
+      <ion-select [(ngModel)]="subActivityData" (ionChange)="subActivityChange($event)">
+        <ion-option *ngFor="let subActivity of subActivityList" [value]='subActivity.id'>{{subActivity.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item class="select-section ">
+      <ion-label>Select Project</ion-label>
+      <ion-select [(ngModel)]="projectData" (ionChange)="projectChange($event)">
+        <ion-option *ngFor="let project of projectList" [value]='project'>{{project.projectName}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+    <ion-item class="select-section ">
+      <ion-label>Select Supplier</ion-label>
+      <ion-select [(ngModel)]="supplierData" (ionChange)="supplierChange($event)">
+        <ion-option *ngFor="let supplier of supplierList" [value]='supplier.supplierId'>{{supplier.supplierName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="select-section ">
+      <ion-label>Select Duration</ion-label>
+      <ion-select [(ngModel)]="durationData" (ionChange)="durationChange($event)">
+        <ion-option *ngFor="let durationList of msmeAuditList" [value]='durationList'>{{durationList.duration}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item class="select-section ">
+      <ion-label>Select Child</ion-label>
+      <ion-select (ionChange)="supplierChange($event)">
+        <ion-option *ngFor="let durat of auditList" [value]='supplier'>child</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+    <ion-item class="select-section " *ngIf="notpilot && supplierData &&  showField!='month'">
+      <ion-label>Select Month</ion-label>
+      <ion-select [(ngModel)]="monthData" (ionChange)="monthChange($event)">
+        <ion-option *ngFor="let monthlist of childList" [value]='monthlist'>{{monthlist.month}},{{monthlist.year}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <p class="nodatafound" *ngIf="nodatafound!=''">{{nodatafound}}</p>
+
+    <div *ngIf="auditList.length!=0 && monthData">
+      <!-- <div> -->
+      <ion-item>
+        <ion-label style="color:#6bc7a2">Selected Supplier Details</ion-label>
+      </ion-item>
+      <ion-list>
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Supplier Name</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Pilot Name</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES">
+            {{auditList.supplierName}}
+          </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList.supplierName=='' || auditList.supplierName==null">- -
+          </ion-label>
+          <ion-label class="MSES" text-wrap>{{auditList.pilotName}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList.pilotName=='' || auditList.pilotName==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Project Name</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Project Duration</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{auditList.projectName}}
+          </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList.projectName=='' || auditList.projectName==null">- -
+          </ion-label>
+          <ion-label class="MSES" text-wrap>{{auditList.duration}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList.duration=='' || auditList.duration==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="childList.length!=0">
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Target Point</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Achieved Point</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{targetPoint}}</ion-label>
+          <ion-label class="MSES" *ngIf="targetPoint=='' || targetPoint==null" align="left">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{achievedPoint}}</ion-label>
+          <ion-label class="MSES" *ngIf="achievedPoint=='' || achievedPoint==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="childList.length!=0">
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Month</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Year</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{month}} </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="month=='' || month==null">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{year}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="year=='' || year==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </div>
+  </ion-card>
+  <ion-card class="dash" *ngIf="allowedToEdit && !ShowNext">
+    <ion-item class="taskList">
+      <ion-label align=center style="color: white">Enter Firewall Rating
+      </ion-label>
+    </ion-item>
+    <form [formGroup]="MMAForm">
+      <ion-item>
+        <ion-input type="number" align=center placeholder="Please enter rating here" formControlName="rating">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox color="danger" formControlName="finalScoreSubmitted" style="margin:0px 5px 0px 0px;">
+        </ion-checkbox>
+        <ion-label class="my-checkbox-label">final Score Submitted</ion-label>
+      </ion-item>
+    </form>
+    <button class="btn" ion-button medium full (click)="submit()">Submit</button>
+  </ion-card>
+
+  <ion-card class="dash" *ngIf="ShowNext">
+    <ion-item class="select-section">
+      <ion-icon class="iconStyle" name="calendar" item-right></ion-icon>
+      <ion-label class="action">Next Action Plan Date : </ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [max]="maxYear" [min]="minYear"
+        [(ngModel)]="selectedDate" (ionChange)="dateChange($event)"></ion-datetime>
+    </ion-item>
+    <div class="hrl"></div>
+    <ion-item class="suppli">
+      <ion-label class="MSES">
+        Next Action Plan
+      </ion-label>
+    </ion-item>
+    <div class="desc">
+      <form [formGroup]="actionForm">
+        <ion-item>
+          <ion-textarea rows="4" placeholder="Enter Next Action Plan" formControlName="text" maxlength="140">
+          </ion-textarea>
+        </ion-item>
+      </form>
+    </div>
+    <button class="btn" ion-button medium full (click)="onSubmit()">Submit</button>
+  </ion-card>
+</ion-content>
+<!-- <ion-content>
+  <ion-card class="dash">
+    <ion-item class="taskList">
+      <ion-label align=center style="color: white">MSES-A
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="select-section" *ngIf="pilotList && showField!='pilot' ">
+      <ion-label>Select Pilot</ion-label>
+      <ion-select [(ngModel)]="pilotData" (ionChange)="pilotChange($event)">
+        <ion-option *ngFor="let pilot of pilotList" [value]='pilot.pilotId'>{{pilot.pilotName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="select-section " *ngIf="pilotData && showField!='supplier' ">
+      <ion-label>Select Supplier</ion-label>
+      <ion-select [(ngModel)]="supplierData" (ionChange)="supplierChange($event)">
+        <ion-option *ngFor="let supplier of supplierList" [value]='supplier.supplierId'>{{supplier.supplierName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="select-section " *ngIf="supplierData &&  showField!='month' ">
+      <ion-label>Select Month</ion-label>
+      <ion-select [(ngModel)]="monthData" (ionChange)="monthChange($event)">
+        <ion-option *ngFor="let monthlist of childList" [value]='monthlist.month'>{{monthlist.month}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <p class="nodatafound" *ngIf="nodatafound">{{nodatafound}}</p>
+    <div *ngIf="auditList.length!=0 && monthData">
+      <ion-item>
+        <ion-label style="color:#6bc7a2">Selected Supplier Details</ion-label>
+      </ion-item>
+      <ion-list>
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Supplier Name</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Pilot Name</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES">{{auditList[0].supplierName}}
+          </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList[0].supplierName=='' || auditList[0].supplierName==null">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{auditList[0].pilotName}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList[0].pilotName=='' || auditList[0].pilotName==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Project Name</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Project Duration</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{auditList[0].projectName}}
+          </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList[0].projectName=='' || auditList[0].projectName==null">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{auditList[0].projectDuration}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="auditList[0].projectDuration=='' || auditList[0].projectDuration==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="childList.length!=0">
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Target Point</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Achieved Point</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{targetPoint}}</ion-label>
+          <ion-label class="MSES" *ngIf="targetPoint=='' || targetPoint==null" align="left">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{achievedPoint}}</ion-label>
+          <ion-label class="MSES" *ngIf="achievedPoint=='' || achievedPoint==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="childList.length!=0">
+        <ion-item class="supplier">
+          <ion-label class="MSESA">
+            <b>Month</b>
+          </ion-label>
+          <ion-label class="MSESA">
+            <b>Year</b>
+          </ion-label>
+        </ion-item>
+        <ion-item style="margin-top:-15px">
+          <ion-label class="MSES" text-wrap>{{month}} </ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="month=='' || month==null">- -</ion-label>
+          <ion-label class="MSES" text-wrap>{{year}}</ion-label>
+          <ion-label class="MSES" text-wrap *ngIf="year=='' || year==null">- -</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-card>
+</ion-content> -->

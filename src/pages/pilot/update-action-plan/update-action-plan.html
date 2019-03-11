@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Update Action Plan</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="update">
+    <div class="details">
+      <p class="actProj"> Activity: {{task.activityName}} </p>
+      <p class="actProj"> Supplier: {{task.supplier}}</p>
+      <p class="actProj"> Project Code: {{task.projectCode}}</p>
+      </div>
+
+    <ion-label class="MSES">
+     Previous Action Plan Details
+    </ion-label>
+    <ion-item class="supplier1">
+      <ion-textarea placeholder="Action plan details will be auto populate " disabled ng-readonly="task.nextActionPlan" maxlength="500"
+        [(ngModel)]="task.nextActionPlan"></ion-textarea>
+    </ion-item>
+
+    <ion-item class="supplier">
+      <ion-icon class="iconStyle" name="calendar" item-right></ion-icon>
+      <ion-label class="MSESA" text-wrap>Current Date :
+      </ion-label>
+      <ion-datetime disabled displayFormat="DD MMM YYYY" ng-readonly="task.nextActionPlanDate" pickerFormat="DD MMM YYYY" [max]="maxYear"
+        [min]="minYear" [(ngModel)]="task.nextActionPlanDate"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item class="supplier">
+      <ion-icon class="iconStyle" name="calendar" item-right></ion-icon>
+      <ion-label class="MSESA" text-wrap>Updated Date :
+      </ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [max]="maxYear" [min]="minYear" [(ngModel)]="updatedDate"
+        (ionChange)="dateChange($event)"></ion-datetime>
+    </ion-item>
+
+    <ion-label class="MSES">
+      Next action plan
+    </ion-label>
+    <ion-item class="supplier1">
+      <ion-textarea [(ngModel)]="Justification" placeholder="Please enter next action plan" maxlength="140"></ion-textarea>
+    </ion-item>
+    <br>
+    <button class="btn" ion-button medium full (click)="update()">update</button>
+  </ion-card>
+</ion-content>

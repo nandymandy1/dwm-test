@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Request Action Plan </ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-card class="dash" no-padding>
+    <div class="target">
+      <div class="editFields">
+        <p> Reason for variance</p>
+        <ion-item class="inputItem">
+          <ion-input placeholder="Enter Variance Reason" [(ngModel)]="varianceReason"></ion-input>
+        </ion-item>
+        <p> Action Plan Detail </p>
+        <ion-item class="inputItem">
+          <ion-input placeholder="Enter  Action Plan Detail" [(ngModel)]="actionPlanDetail"></ion-input>
+        </ion-item>
+        <p class="action"> Action Plan Date </p>
+        <ion-item class="inputItem1">
+          <ion-icon class="iconStyle" name="calendar" item-right></ion-icon>
+          <ion-datetime placeholder="Enter Action Plan Date" pickerFormat="DD MMM YYYY" [max]="maxYear" [min]="minYear"
+            [(ngModel)]="actionPlanDate" (ionChange)="dateChange($event)"></ion-datetime>
+        </ion-item>
+      </div>
+    </div>
+    <button class="btn" ion-button medium full (click)="onSubmit()">Submit</button>
+
+  </ion-card>
+</ion-content>

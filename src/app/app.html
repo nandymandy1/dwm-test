@@ -1,0 +1,28 @@
+  <ion-menu [content]="content" persistent="true" swipeEnabled="false">
+    <ion-content class="back">
+        <div center text-center class="app-login-logo">
+          <ion-icon class="userPic" item-start name="ios-contact"></ion-icon>
+          <ion-label class="label-md" *ngIf="profile">{{profile.name}}
+          </ion-label>
+          <p>{{role}}</p>
+        </div>
+
+        <ion-list class="appList">
+          <ion-item class="appItem">
+            <button menuClose menuToggle ion-item *ngFor="let p of pages" (click)="openPage(p)" class="sideMenu">
+                <ion-icon class="sideMenuBtn" item-start [name]="p.icon"></ion-icon>&nbsp;&nbsp; {{p.title}}
+            </button>
+            <!-- <button menuClose ion-item ion-item (click)="syncData()" menuToggle>
+                <ion-icon class="sideMenuBtn" item-start name="ios-sync-outline"></ion-icon>&nbsp;&nbsp;Sync Data
+            </button> -->
+            <button menuClose ion-item ion-item (click)="onLogout()" menuToggle>
+                <ion-icon class="sideMenuBtn" name="custom-logout" item-start></ion-icon>&nbsp;&nbsp;&nbsp;Logout
+            </button>
+            <button menuClose ion-item ion-item class="sideMenuBtn"  >
+                App Version : 1.0
+            </button>
+          </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav id="nav" #rootNavController #content [root]="rootPage" ></ion-nav>

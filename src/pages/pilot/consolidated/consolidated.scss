@@ -1,0 +1,55 @@
+page-consolidated {
+    .dash{
+        border-radius: 12px;
+    }
+    .nodatafound{
+        margin: 20px;
+    }
+    .dashboard{
+      background-color: #6bc7a2 !important;
+    }
+    .taskList{
+        background-color: #6bc7a2;
+        height: 5px !important;
+        margin-bottom: -6px;
+        margin-top: -4px;
+    }
+    .iconStyle{    
+        
+        ion-icon{
+            margin-left: 0!important;
+            margin-top: 10px!important;
+            margin-bottom: 10px!important;
+                        } 
+                        ion-label{
+                            //line-height: 1.7rem;
+                            display: block;
+                           // height: 3.6rem;
+                            font-size: 1.3rem;
+                            width: 100%!important;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            padding: 0px;
+                            margin: 7px;
+                            
+                         }
+                         .day{
+                            color: #219868;
+                            font-weight: 600!important;
+                            font-size: 1.8rem;
+                        }
+                        .mon{
+                            color: #219868;
+                            
+                        }
+                        .actProj{
+                            color: #d84646;  
+                            font-size: 1.3rem; 
+                           // margin-top: 10px!important;
+                        }
+                        border-bottom: 2px #ccc solid!important;
+                      
+    }
+  
+}

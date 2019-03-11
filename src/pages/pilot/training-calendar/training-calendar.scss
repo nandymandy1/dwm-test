@@ -1,0 +1,102 @@
+page-training-calendar {
+    .card{
+            border-radius: 15px;
+    }
+   
+    .title{
+        color: #6bc7a2;
+        margin-top: 5px;
+        font-size: 18px;
+    }
+    .type{
+        //color:#6bc7a2;
+        margin-left: 20px;
+        margin:10px 20px;
+   }
+   .loc{
+    margin-top: 5px;
+    margin-left: -10px;
+    color: rgb(133, 133, 133)!important ;
+   }
+   .status{
+    margin-left: 20px;
+    color: rgb(232, 27, 27) ;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+  .statusAttended{
+    margin-right: 7px;
+    color: rgb(35, 125, 35) ;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  .statusNotAttended{
+    margin-right: 7px;
+    color: rgb(222, 31, 17) ;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  .headersList{
+      background-color: rgb(109, 109, 109);
+      padding: 13px 13px 13px 17px;
+
+      color: rgb(255, 255, 255) ;
+      font-size: 1.7rem;
+      font-weight: 500;
+  }
+   .attended{
+        margin-top: -17px;
+        margin-left: 0px;
+        color: DarkGray !important; 
+   }
+   .col {
+    padding: 10px;}
+    .btn{
+        padding-bottom: -15px;
+        background-color: rgb(232, 62, 76) ;
+        margin-bottom: -1px !important;
+        height: 40px;
+        margin-top: -10px;
+    }
+    .radio{
+        margin-left: 0px;
+       // background-color: antiquewhite;
+    }
+    .radio-md .radio-icon {
+        margin-right: 12px;
+        
+    }
+    .menu{
+        color: white;
+        margin-right: 0px;
+    }
+    .taskList{
+        background-color: #6bc7a2;
+       // height: 2px !important;
+        margin-bottom: -5px;
+        margin-top: -19px;
+    }
+    .typeT{
+        font-size: 16px;
+        //font-weight: 600;
+        color: #ffffff;
+        margin-left: 3px !important;
+        margin-top: 30px !important;
+    }
+    .card-md p {
+        color: DarkGray; 
+   }
+   .iconStyle{
+       color: red !important;
+   }
+   .expandIcon{
+    color:white;
+    font-size: 2.3rem;
+   }
+   .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+    margin-left: 0;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+}

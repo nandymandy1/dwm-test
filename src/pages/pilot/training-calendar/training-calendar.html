@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Training Calendar
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="onRightMenu()">
+        <ion-icon class="menu" name="custom-menu_right"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--by Poonam  -->
+  <div class="headersList"> Functional Training</div>
+  <p class="nodatafound" *ngIf="functionalList1.length==0">No Training Available</p>
+  <ion-card *ngFor="let list3 of functionalList1;  let i=index">
+    <train-cal-radio-btn *ngIf="list3" [trainingData]="list3" (OnStatus)="radioValue($event)" (OnSubmit)="submit($event)"></train-cal-radio-btn>
+  </ion-card>
+
+  <div class="headersList"> Behavioural Training</div>
+  <p class="nodatafound" *ngIf="behaviouralList1.length==0">No Training Available</p>
+  <ion-card *ngFor="let list2 of behaviouralList1;  let i=index">
+    <train-cal-radio-btn *ngIf="list2" [trainingData]="list2" (OnStatus)="radioValue($event)" (OnSubmit)="submit($event)"></train-cal-radio-btn>
+  </ion-card>
+
+  <div class="headersList">Training Status</div>
+  <p class="nodatafound" *ngIf="attendedList1.length==0">No Training Available</p>
+  <ion-card *ngFor="let list1 of attendedList1;  let i=index">
+    <ion-item class="taskList">
+      <div class="typeT" item-left>{{list1.trainingType}}&nbsp;Training <i [class]="list1.status=='Attended' ? 'statusAttended' : 'statusNotAttended'"
+          align="right">- {{list1.status}}</i></div>
+    </ion-item>
+
+    <div class="type">{{list1.trainingName}}</div>
+    <p class="loc">
+      <ion-icon name="custom-monthlyVisit" large></ion-icon>&nbsp;&nbsp;{{list1.fromDate}} &nbsp;&nbsp;To
+      &nbsp;&nbsp;{{list1.toDate}}
+    </p>
+    <!-- <p class="loc">
+      <ion-icon name="custom-loc" item-left large></ion-icon>&nbsp;&nbsp;{{list1.location}}
+    </p> -->
+    <div class="type" *ngIf="list1.locationType">Location Type &nbsp;&nbsp;: &nbsp;&nbsp;{{list1.locationType}}</div>
+    <div class="type" *ngIf="list1.moduleType">Module Type&nbsp;&nbsp;:&nbsp;&nbsp;{{list1.moduleType}}</div>
+    <div class="type" *ngIf="list1.actorName">Actor Name &nbsp;&nbsp;:&nbsp;&nbsp;{{list1.actorName}}</div>
+
+  </ion-card>
+</ion-content>

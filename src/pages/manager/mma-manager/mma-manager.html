@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Audit MMA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="dash">
+    <ion-item class="taskList">
+      <ion-label align=center style="color: white">FIREWALL
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="select-section" *ngIf="projectList && showField!='project' ">
+      <ion-label>Select Project</ion-label>
+      <ion-select [(ngModel)]="projectData" (ionChange)="projectChange($event)">
+        <ion-option *ngFor="let project of projectList" [value]='project.projectId'>{{project.projectName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="select-section" *ngIf="projectData && pilotList && showField!='pilot'">
+      <ion-label>Select Pilot</ion-label>
+      <ion-select [(ngModel)]="pilotData" (ionChange)="pilotChange($event)">
+        <ion-option *ngFor="let pilot of pilotList" [value]='pilot.pilotId'>{{pilot.pilotName}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="select-section " *ngIf="pilotData && supplierList && showField!='supplier'">
+      <ion-label>Select Supplier</ion-label>
+      <ion-select [(ngModel)]="supplierData" (ionChange)="supplierChange($event)">
+        <ion-option *ngFor="let supplier of supplierList" [value]='supplier.supplierId'>{{supplier.supplierName}}</ion-option>
+      </ion-select>
+    </ion-item>
+   
+
+    <ion-item class="select-section " *ngIf="supplierData &&  showField!='month'">
+      <ion-label>Select Month</ion-label>
+      <ion-select [(ngModel)]="monthData" (ionChange)="monthChange($event)">
+        <ion-option *ngFor="let monthlist of childList" [value]='monthlist.month'>{{monthlist.month}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <p class="nodatafound" *ngIf="nodatafound!=''">{{nodatafound}}</p>
+    
+    <div *ngIf="auditList.length!=0 && monthData">
+    <ion-item>
+      <ion-label style="color:#6bc7a2">Selected Supplier Details</ion-label>
+    </ion-item>
+    <ion-list>
+      <ion-item class="supplier">
+        <ion-label class="MSESA">
+          <b>Supplier Name</b>
+        </ion-label>
+        <ion-label class="MSESA">
+          <b>Pilot Name</b>
+        </ion-label>
+      </ion-item>
+      <ion-item style="margin-top:-15px">
+        <ion-label class="MSES">{{auditList[0].supplierName}}
+        </ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="auditList[0].supplierName=='' || auditList[0].supplierName==null">- -</ion-label>
+        <ion-label class="MSES" text-wrap>{{auditList[0].pilotName}}</ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="auditList[0].pilotName=='' || auditList[0].pilotName==null">- -</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="supplier">
+        <ion-label class="MSESA">
+          <b>Project Name</b>
+        </ion-label>
+        <ion-label class="MSESA">
+          <b>Project Duration</b>
+        </ion-label>
+      </ion-item>
+      <ion-item style="margin-top:-15px">
+        <ion-label class="MSES" text-wrap>{{auditList[0].projectName}}
+        </ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="auditList[0].projectName=='' || auditList[0].projectName==null">- -</ion-label>
+        <ion-label class="MSES" text-wrap>{{auditList[0].projectDuration}}</ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="auditList[0].projectDuration=='' || auditList[0].projectDuration==null">- -</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="childList.length!=0">
+      <ion-item class="supplier">
+        <ion-label class="MSESA">
+          <b>Target Point</b>
+        </ion-label>
+        <ion-label class="MSESA">
+          <b>Achieved Point</b>
+        </ion-label>
+      </ion-item>
+      <ion-item style="margin-top:-15px">
+        <ion-label class="MSES" text-wrap>{{targetPoint}}</ion-label>
+        <ion-label class="MSES" *ngIf="targetPoint=='' || targetPoint==null" align="left">- -</ion-label>
+        <ion-label class="MSES" text-wrap>{{achievedPoint}}</ion-label>
+        <ion-label class="MSES" *ngIf="achievedPoint=='' || achievedPoint==null">- -</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="childList.length!=0">
+      <ion-item class="supplier">
+        <ion-label class="MSESA">
+          <b>Month</b>
+        </ion-label>
+        <ion-label class="MSESA">
+          <b>Year</b>
+        </ion-label>
+      </ion-item>
+      <ion-item style="margin-top:-15px">
+        <ion-label class="MSES" text-wrap>{{month}} </ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="month=='' || month==null">- -</ion-label>
+        <ion-label class="MSES" text-wrap>{{year}}</ion-label>
+        <ion-label class="MSES" text-wrap *ngIf="year=='' || year==null">- -</ion-label>
+      </ion-item>
+    </ion-list>
+   
+  </div>
+</ion-card>
+</ion-content>

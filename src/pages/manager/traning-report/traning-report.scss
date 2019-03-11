@@ -1,0 +1,99 @@
+page-traning-report {
+.card{
+        border-radius: 12px;
+}
+.headerTxt{
+    margin: auto!important;
+    text-align: center;
+    font-size: 2rem;
+    color: #505050;
+}
+.training{
+    background-color: #6bc7a2;
+    height: 15px !important;
+}
+.title{
+    color: #6bc7a2;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.type{
+    color:rgb(232, 62, 76) ;
+   // margin-left: 20px;
+    margin-top: 5px;
+}
+.type1{
+    //color:#6bc7a2;
+    // margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.typeT{
+    color: #59b892;
+    //margin-left: 20px;
+    margin-top: 5px;
+    // font-size: 1.1em!important;
+     // margin-top: 10px;
+}
+.loc{
+   margin-top: 5px;
+   margin-left: -10px;
+   ion-icon{
+    margin-left: 1.4rem !important;
+   }
+}
+
+.menu{
+    color: white;
+    margin-right: 0px;
+}
+.taskList1{
+    padding:0px;
+    background-color: #ffffff !important;
+    ion-row{
+       // padding:10px;
+        margin:0px;
+        .percenCal{
+            padding:12px;
+            margin:0px;
+            color: rgb(118, 118, 118);
+          // background-color: #ccc;
+        }
+        .percenCal1{
+            padding:12px!important;
+            margin:0px;
+            color: white;
+            background-color: rgb(118, 118, 118);
+        }
+        .percenCal2{
+            padding:12px!important;
+            margin:0px;
+            color: rgb(118, 118, 118);
+            text-align: right;
+          //  background-color: rgb(118, 118, 118);
+        }
+    }
+}
+.innertaskList{
+    border: 1px #ccc solid;
+}
+.status{
+  margin-right: 7px;
+  color: rgb(232, 62, 76) ;
+  font-weight: 400;
+}
+ion-row{
+    padding:0px;
+    margin:0px;
+    ion-col{
+        padding:0px;
+        margin:0px;
+       // background-color: antiquewhite;
+    }
+}
+.card-md p {
+    
+     color: DarkGray; 
+}
+}
+

@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>Sustenance Audit</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchInput()"></ion-searchbar> -->
+  <!-- <ion-list>
+    <ion-item *ngFor="let supplier of filteredList" (click)="supChange(supplier)">
+      {{supplier.name}}
+    </ion-item>
+  </ion-list> -->
+  <!-- <p class="nodatafound" *ngIf="noDataFound">{{noDataFound}}</p> -->
+  <ion-card class="dash" no-padding  >
+      <ion-item class="taskList">
+        <ion-label align=center style="color: white">Sustenance Audit
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="select-section " *ngIf="notpilot">
+        <ion-label>Select Pilot</ion-label>
+        <ion-select [(ngModel)]="pilotData" (ionChange)="pilotChange($event)">
+          <ion-option *ngFor="let pilot of pilotList" [value]='pilot.id'>{{pilot.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="select-section ">
+          <ion-label>Select Sub-Activity</ion-label>
+          <ion-select [(ngModel)]="subActivityData" (ionChange)="subActivityChange($event)">
+            <ion-option *ngFor="let subActivity of subActivityList" [value]='subActivity.id'>{{subActivity.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+          
+    <ion-item class="select-section " >
+        <ion-label>Select Supplier</ion-label>
+        <ion-select [(ngModel)]="supplierData" (ionChange)="supplierChange($event)">
+          <ion-option *ngFor="let supplier of supplierList" [value]='supplier.auditId'>{{supplier.supplierName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      </ion-card>
+  <!-- <ion-item class="taskList">
+      <ion-label align=center style="color:white">SUSTENANCE
+      </ion-label>
+    </ion-item>
+    
+    <ion-item class="select-section" *ngIf="pilotList && showField!='pilot' ">
+      <ion-label>Select Pilot</ion-label>
+      <ion-select [(ngModel)]="pilotData" (ionChange)="pilotChange($event)">
+        <ion-option *ngFor="let pilot of pilotList" [value]='pilot.pilotId'>{{pilot.pilotName}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="select-section ">
+        <ion-label>Select Sub-Activity</ion-label>
+        <ion-select [(ngModel)]="subActivityData" (ionChange)="subActivityChange($event)">
+          <ion-option *ngFor="let subActivity of subActivityList" [value]='subActivity.id'>{{subActivity.name}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+    <ion-item class="select-section " >
+      <ion-label>Select Supplier</ion-label>
+      <ion-select [(ngModel)]="supplierData" (ionChange)="supplierChange($event)">
+        <ion-option *ngFor="let supplier of supplierList" [value]='supplier.auditId'>{{supplier.supplierName}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+  <div *ngIf="auditList.length>0">
+    <ion-card class="dash" no-padding *ngFor="let p of auditList;  let i=index">
+      <ion-item class="taskList">
+        <ion-icon style="color:#fff" (click)="setVisibilityFlags(i)" item-right [name]="expandFlag[i]?'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+        <ion-label align=center class="yearMonth"> MSES-Sustenance <i style="color:red"> ({{p.auditStatus}})</i>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+
+        <ion-row class="desc">
+          <ion-col col-4>Project </ion-col>
+          <ion-col col-8>: {{p.project}}</ion-col>
+        </ion-row>
+        <ion-row class="desc">
+          <ion-col col-4>Supplier </ion-col>
+          <ion-col col-8>: {{p.supplierName}}</ion-col>
+        </ion-row>        
+        <ion-row class="desc" text-wrap>
+            <ion-col col-4>Location </ion-col>
+            <ion-col col-8>: {{p.supplierLocation}}</ion-col>
+          </ion-row>
+        <ion-row class="desc">
+          <ion-col col-4>Audit Type</ion-col>
+          <ion-col col-5>: {{p.type}}</ion-col>         
+        </ion-row>
+
+      </ion-item>
+
+      <div *ngIf="expandFlag[i]" class="target">
+        <ion-item>
+          <ion-row class="desc" text-wrap>
+            <ion-col col-4>Planed Audit Date</ion-col>
+            <ion-col col-8>: {{p.plannedRatingDate}}</ion-col>
+          </ion-row>
+          <ion-row class="desc" text-wrap>
+            <ion-col col-4>Planed Release Date</ion-col>
+            <ion-col col-8>: {{p.plannedReportReleaseDate}}</ion-col>
+          </ion-row>
+          
+          <!-- <ion-row class="desc status" text-wrap text-align="right">
+            <ion-col col-6> </ion-col>
+            <ion-col col-6>Status : {{p.status}}</ion-col>
+          </ion-row> -->
+        </ion-item>
+        <button class="btn" ion-button medium full (click)="continue(p)" *ngIf="p.allowedToUpdateRatingOrScore || p.allowedToUpdateReportReleaseDate">Continue</button>
+
+      </div>
+    </ion-card>
+  </div>
+
+
+</ion-content>

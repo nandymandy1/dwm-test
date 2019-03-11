@@ -1,0 +1,84 @@
+page-policy-sheet-manager {
+    .dash{
+        border-radius: 12px;
+        margin-top: 10px;
+        opacity: 0.93;
+    }
+    .supplier{
+       // margin-top: -15px;
+    }
+    .label-md {
+        margin: 7px !important;
+         margin-top: 1px !important; 
+    }
+    .hrl{
+        //  background-color: #9b9b9b;
+         // width: 100%;
+          height: 10px;
+          border-bottom: 1px #9b9b9b solid;
+          border-right: 1px #9b9b9b solid;
+          border-left: 1px #9b9b9b solid;
+          margin-right: -0.8rem !important;
+          margin-left: -0.8rem !important;
+          margin-top: -8px;
+      } 
+      .taskList{
+        background-color: #6bc7a2;
+        height: 5px !important;
+        font-weight: 500;
+        margin-bottom: 3px;
+        margin-top: -3px;
+    }
+    .list{
+        //background-color: #6bc7a2;
+        height: 4px !important;
+        margin-bottom: -9px;
+        margin-top: -5px;
+    }
+    .MSESA{
+        font-size: 1.4rem;
+    }
+    .supplier{
+        margin-top: -15px;
+    }
+    .btn{
+        padding-bottom: -15px;
+        background-color: rgb(232, 62, 76) ;
+        margin-bottom: 0px;
+        height: 40px;
+    }
+    .btn1{
+        padding-bottom: -15px;
+        background-color: #9b9b9b ;
+        margin-bottom: 0px;
+        height: 40px;
+    }
+    // .showHist{
+    //     font-size: 1.5rem!important;
+    //     margin: 0px!important;
+    //     margin-top: 7px!important;
+    //     padding: 0px!important;
+    // }
+    .MSES{
+        color: #6bc7a2;
+        font-size: 1.4rem;
+    }
+    .target{
+        border-radius: 9px;
+      //  margin-bottom: -6px;
+      //  margin-top: -4px;
+    }.label-md {
+        
+        font-size: 1.5rem;
+    }
+    .status{
+        background-color:#6bc7a2;
+    }.row {
+        margin-left: -4px;
+        margin-bottom: 2px;}
+    .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+        margin-left: 0;
+        margin-top: 3px;
+      //  font-size: 1.5rem;
+        margin-bottom: 10px;}
+}

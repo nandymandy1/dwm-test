@@ -1,0 +1,219 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>
+      Dashboard
+    </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="custom-hamburger"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="sync()">
+        <ion-icon name="sync"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="dash">
+    <ion-item class="taskList">
+      <ion-label align=center style="color:#fff">Upcoming Task List
+      </ion-label>
+    </ion-item>
+    <div *ngIf="taskList.length==0">
+      <p class="nodatafound">No Upcoming Task Available</p>
+    </div>
+
+    <div *ngIf="taskList.length!=0">
+      <ion-list *ngFor="let list of taskList ; let i=index">
+        <div class="hrl" *ngIf="i<4 && i>0"></div>
+        <ion-item class="iconStyle" *ngIf="i<4">
+          <ion-icon item-left (click)="onEdit(list)">
+            <p class="day">{{ getDate(list.nextActionPlanDate) }}</p>
+            <p class="mon">{{ month_name(list.nextActionPlanDate) }}</p>
+          </ion-icon>
+          <ion-label text-wrap (click)="onEdit(list)">
+            <p text-wrap class="actProj"> {{list.nextActionPlan}} </p>
+            <p> Activity Name: {{list.activityName}} </p>
+            <p> Supplier: {{list.supplier}}</p>
+            <!-- <p> Project Code: {{list.projectCode}}</p>
+            <p> Sector: {{list.sector}}</p>
+            <p> Source: {{list.source}}</p>
+            <p> Target Rating: {{list.targetRating}}</p>
+            <p> Achieved Rating: {{list.achievedRating}}</p>
+            <p> ActionPlan Status: {{list.actionPlanStatus}}</p> -->
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="hrl"></div>
+    </div>
+    <div class="btn" *ngIf="taskList.length!=0">
+      <button item-right (click)="showMore()">
+        <b>Show More </b>
+      </button>
+    </div>
+  </ion-card>
+  <!---------------------------------For Pilots only--------------------------->
+  <div *ngIf="role=='Pilot'">
+    <div class="squareDiv">
+      <div style="height:50%;">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="audit()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_audit.svg">
+                </ion-item>
+                <span>Audit</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="calendar()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_training_calender_menu.svg">
+                </ion-item>
+                <span>Training Calendar</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="height:50%;">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="policyPilot()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_policy_sheet_menu.svg">
+                </ion-item>
+                <span>Policy Sheet</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="consolidatPilot()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_consolideted_tracker_menu.svg">
+                </ion-item>
+                <span>Consolidated Tracker</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="height:50%; ">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem1">
+              <div class="innerDiv">
+                <p>Coming Soon</p>
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_morning_meeting_menu.svg">
+                </ion-item>
+                <span>Morning Meeting</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem1">
+              <div class="innerDiv">
+                <p>Coming Soon</p>
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_visit_plan_menu.svg">
+                </ion-item>
+                <span>Monthly Visit Plan</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------For Senior Manager--------------------->
+
+  <div *ngIf="role=='Manager' || role=='HOD2' || role=='HOD1'">
+    <div class="squareDiv">
+      <div style="height:50%;">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="auditManager()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_audit.svg">
+                </ion-item>
+                <span>Audit</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="calendarManager()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_training_calender_menu.svg">
+                </ion-item>
+                <span>Training Calendar</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="height:50%;">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="policyManager()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_policy_sheet_menu.svg">
+                </ion-item>
+                <span>Policy Sheet</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem">
+              <div class="innerDiv" (click)="consolidatManager()">
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_consolideted_tracker_menu.svg">
+                </ion-item>
+                <span>Consolidated Tracker</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="height:50%; ">
+        <ion-row class="profile-infos" justify-content-center>
+          <ion-col text-center col-6>
+            <div class="contentItem1">
+              <!-- <div class="innerDiv" (click)="morningMeetingManager()"> -->
+              <div class="innerDiv">
+                <p>Coming Soon</p>
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_morning_meeting_menu.svg">
+                </ion-item>
+                <span>Morning Meeting</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col text-center col-6>
+            <div class="contentItem1">
+              <!-- <div class="innerDiv" (click)="visitPlanManager()"> -->
+              <div class="innerDiv">
+                <p>Coming Soon</p>
+                <ion-item center text-center class="login-logo" no-lines>
+                  <img src="assets/imgs/icn_visit_plan_menu.svg">
+                </ion-item>
+                <span>Monthly Visit Plan</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>

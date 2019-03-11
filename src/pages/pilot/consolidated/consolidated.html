@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Plan Tracker</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="dash">
+    <ion-item class="taskList">
+      <ion-label align=center style="color:white;">Task List
+      </ion-label>
+    </ion-item>
+    <p class="nodatafound" *ngIf="noDataFound || taskList">{{noDataFound}}</p>
+    <ion-list *ngFor="let list of taskList ; let i=index">
+      <!-- <ion-item class="iconStyle"> -->
+      <div class="tracker-col">
+        <ion-row align-items-center>
+          <ion-col col-3 style="text-align: center;">
+            <ion-icon item-left (click)="onEdit(list)">
+              <p class="day" style="color:#219868;">{{ getDate(list.nextActionPlanDate) }}</p>
+              <p class="mon" style="color:#219868;">{{ month_name(list.nextActionPlanDate) }}</p>
+            </ion-icon>
+          </ion-col>
+          <ion-col col-9>
+            <ion-label text-wrap (click)="onEdit(list)">
+              <p text-wrap class="actProj"> {{list.nextActionPlan}} </p>
+              <p> Activity Name: {{list.activityName}} </p>
+              <p> Supplier: {{list.supplier}}</p>
+              <p> Project Code: {{list.projectCode}}</p>
+              <p> Sector: {{list.sector}}</p>
+              <p> Source: {{list.source}}</p>
+              <p> Target Rating: {{list.targetRating}}</p>
+              <p> Achieved Rating: {{list.achievedRating}}</p>
+              <p> ActionPlan Status: <i *ngIf="list.actionPlanStatus == 'Close'" style="color: green;">{{list.actionPlanStatus}}</i>
+                <i *ngIf="list.actionPlanStatus == 'Open'" style="color: red;">{{list.actionPlanStatus}}</i>
+              </p>
+              <p>
+                <ion-icon class="showHist" *ngIf="isActionPlanHistory" name="ios-timer-outline">&nbsp;&nbsp;View
+                  history</ion-icon>
+              </p>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <div class="hrl"></div>
+      </div>
+    </ion-list>
+  </ion-card>
+</ion-content>

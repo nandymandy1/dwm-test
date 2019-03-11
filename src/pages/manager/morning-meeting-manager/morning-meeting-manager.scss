@@ -1,0 +1,59 @@
+page-morning-meeting-manager {
+        .taskList{
+            background-color: #6bc7a2;
+            height: 5px !important;
+            margin-bottom: -9px;
+            margin-top: -5px;
+        }
+        .target{
+            border-radius: 9px;
+          //  margin-bottom: -6px;
+          //  margin-top: -4px;
+        }
+        .btn{
+            padding-bottom: -15px;
+            background-color: rgb(232, 62, 76) ;
+            margin-bottom: 0px;
+            height: 40px;
+        }
+        .dash{
+            border-radius: 12px;
+            margin-top: 20px;
+            opacity: 0.93;
+        }
+        .hrl{
+              height: 10px;
+              border-bottom: 1px #c6c6c6 solid;
+            //   border-right: 1px #c6c6c6 solid;
+            //   border-left: 1px #c6c6c6 solid;
+              margin-right: -0.8rem !important;
+              margin-left: -0.8rem !important;
+              margin-top: -8px;
+          } 
+          .team{
+           // margin-left: 10px;
+          }
+          .task{
+            background-color: #6bc7a2;
+            height: 2px !important;
+            margin-bottom: -30px;
+            margin-top: 0px;
+        }
+        .select-section{
+          //  background-color: #6bc7a2;
+            margin: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top:16px;
+           // border:1px #6bc7a2 solid;
+            border-radius: 10px;
+            ion-item{
+                margin-top: 5px;
+                border:1px #6bc7a2 solid;
+            border-radius: 10px; 
+            }
+           // background-color: #ffffff;
+        }
+    }
+
+    

@@ -1,0 +1,67 @@
+page-monthly-visit-plan {
+    .taskList{
+        background-color: #6bc7a2;
+        height: 5px !important;
+        margin-bottom: -9px;
+        margin-top: -5px;
+    }
+    .taskList1{
+        background-color: #6bc7a2;
+        margin-bottom: -37px;
+        margin-top: 0;
+    }
+    .target{
+        border-radius: 9px;
+      //  margin-bottom: -6px;
+      //  margin-top: -4px;
+    }
+    .btn{
+        padding-bottom: -15px;
+        background-color: rgb(232, 62, 76) ;
+        margin-bottom: 0px;
+        height: 40px;
+    }
+    .dash{
+        border-radius: 12px;
+        margin-top: 20px;
+        opacity: 0.93;
+    }
+    .hrl{
+          height: 10px;
+          border-bottom: 1px #9b9b9b solid;
+          border-right: 1px #9b9b9b solid;
+          border-left: 1px #9b9b9b solid;
+          margin-right: -0.8rem !important;
+          margin-left: -0.4rem !important;
+          margin-top: -4px;
+      } 
+      .list-md {
+        margin: 0px ;
+    }
+    .iconStyle{        
+            ion-icon{
+                            } 
+            ion-label{
+                line-height: 1.7rem;
+                display: block;
+                height: 3.6rem;
+                font-size: 1.5rem;
+                width: 100%!important;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding: 0px;
+                margin: 0px;
+                
+             }
+             .day{
+                color: #219868;
+                font-weight: 600!important;
+            }
+            .mon{
+                color: #219868;
+                
+            }
+            
+        }
+}

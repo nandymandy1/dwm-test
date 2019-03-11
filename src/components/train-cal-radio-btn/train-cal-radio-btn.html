@@ -1,0 +1,38 @@
+
+<ion-item class="taskList">
+    <div class="typeT" item-left>{{trainingItem.commodity}}
+      <i class="status" style="margin-right: auto; margin-left: auto;">{{trainingItem.status}}</i>
+    </div>
+    <ion-icon *ngIf="trainingItem.status=='Pending' && trainingItem.allowedToUpdateStatus" class="expandIcon" (click)="expandFlag=!expandFlag" item-right [name]="expandFlag?'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+  </ion-item>
+  <div  class="trainingHead">{{trainingItem.trainingName}}</div>
+  <p class="loc">
+    <ion-icon name="custom-monthlyVisit" large></ion-icon>&nbsp;&nbsp;{{trainingItem.fromDate}} &nbsp;&nbsp;To &nbsp;&nbsp;{{trainingItem.toDate}}</p>
+  <!-- <p class="loc">
+    <ion-icon name="custom-loc" item-left large></ion-icon>&nbsp;&nbsp;{{trainingItem.location}}
+  </p> -->
+  
+  <div  class="trainingHead" *ngIf="trainingItem.locationType">Location Type &nbsp;&nbsp;: &nbsp;&nbsp;{{trainingItem.locationType}}</div>
+  <div  class="trainingHead" *ngIf="trainingItem.moduleType">Module Type&nbsp;&nbsp;:&nbsp;&nbsp;{{trainingItem.moduleType}}</div>
+  <div  class="trainingHead" *ngIf="trainingItem.actorName">Actor Name &nbsp;&nbsp;:&nbsp;&nbsp;{{trainingItem.actorName}}</div>
+  <div *ngIf="expandFlag && trainingItem.allowedToUpdateStatus">
+    <ion-row radio-group [(ngModel)]="status" class="radio">
+      <ion-col>
+        <ion-item class="attended">
+          <ion-radio value="attended" color='danger' (ionSelect)="setAttended(trainingItem)"></ion-radio>
+          <ion-label>
+            <h3 style="color: DarkGray; ">Attended</h3>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item class="attended">
+          <ion-radio value="notAttended" color='danger' (ionSelect)="setNotAttended(trainingItem)"></ion-radio>
+          <ion-label>
+            <h3 style="color: DarkGray; ">Not Attended</h3>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <button class="btn" ion-button medium full (click)="submit(trainingItem)">Submit</button>
+  </div>

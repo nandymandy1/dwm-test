@@ -1,0 +1,36 @@
+<ion-content padding>
+  <ion-item center text-center class="login-logo" no-lines>
+    <img src="assets/imgs/img_dwm_logo_login.png">
+  </ion-item>
+  <br>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="user">
+      <ion-item class="form-control">
+        <ion-label floating>User id</ion-label>
+        <ion-input type="text" (focus)="onTextInputFocus($event)" formControlName="userId"></ion-input>
+        <span class="custom-icon" item-right large>
+          <ion-icon name="person"></ion-icon>
+        </span>
+
+      </ion-item>
+      <ion-item class="required-text" *ngIf="!loginForm.controls.userId.valid  && (loginForm.controls.userId.touched)">
+        <p class="danger">UserId required.</p>
+      </ion-item>
+      <ion-item class="form-control">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" (focus)="onTextInputFocus($event)" formControlName="password"></ion-input>
+        <span class="custom-icon" item-right large>
+          <ion-icon name="lock"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item class="required-text" *ngIf="!loginForm.controls.password.valid  && (loginForm.controls.password.touched)">
+        <p class="danger">Password required.</p>
+      </ion-item>
+    </div>
+    <ion-item class="submit-section">
+      <button ion-button full>Submit</button>
+    </ion-item>
+  </form>
+
+</ion-content>

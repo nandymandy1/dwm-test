@@ -1,0 +1,38 @@
+page-audits {
+    .dash{
+        border-radius: 12px;
+    }
+    
+    .taskList{
+        font-weight: 600;
+      //  background-color: mediumturquoise;
+        height: 5px !important;
+        // margin-bottom: -8px;
+        // margin-top: -6px;
+    }
+    .hrl{
+        //  background-color: #9b9b9b;
+         // width: 100%;
+          height: 9px;
+          border-bottom: 1px #cbcbcb solid;
+          border-right: 1px #fffdfd solid;
+          border-left: 1px #ffffff solid;
+          margin-right: -0.8rem !important;
+          margin-left: -0.8rem !important;
+          margin-top: -8px;
+        
+      } 
+      .project{
+          margin-top: 20px;
+      }
+      .card-md > .item:last-child, .card-md > .item:last-child .item-inner, .card-md > .item-wrapper:last-child .item {
+       // margin-bottom: -30px;
+    }
+    .labell{
+        background-color: rgb(232, 62, 76)
+    }
+    .label{
+       color: white;
+       vertical-align: middle !important;
+    }
+}

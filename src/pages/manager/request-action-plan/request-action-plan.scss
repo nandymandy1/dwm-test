@@ -1,0 +1,153 @@
+page-request-action-plan {
+    ion-select{
+        width: 100%!important;
+        min-width: 100%!important;
+        padding: 13px 8px 13px 26px;
+     }
+.dash{
+    border-radius: 12px;
+    margin-top: 20px;
+    opacity: 0.93;
+    transition: all linear 1s!important;
+}
+  .taskList{
+    background-color: #6bc7a2;
+    height: 5px !important;
+    margin-bottom: -4px;
+    margin-top: -2px;
+    transition: all linear 1s!important;
+}
+.yearMonth{
+    color: white;
+    font-weight: 500;
+   
+}
+.select-section{
+    //background: transparent;
+    border-bottom: 1px solid rgb(211, 211, 211);
+} 
+.desc{
+    margin-bottom: 5px;
+}
+.list{
+    //background-color: #6bc7a2;
+    height: 4px !important;
+    margin-bottom: -9px;
+    margin-top: -5px;
+}
+.MSESA{
+    font-size: 1.4rem;
+}
+.supplier{
+    margin-top: -15px;
+}
+.btn{
+   // padding-bottom: -15px;
+     background-color: rgb(232, 62, 76) ;
+     margin-bottom: 0px;
+     height: 40px!important;
+     font-size: 1.5rem!important;
+  //  height: 40px;
+}
+.MSES{
+    color: #6bc7a2;
+    font-size: 1.4rem;
+}
+.editFields{
+    margin-top: 5px;
+    //background-color: #ccc;
+}
+.target{
+  
+    border-radius: 9px;
+    margin-left: 10px!important;
+    margin-right:10px!important;
+    padding-left: 6px!important;
+    padding-right: 6px!important;
+    ion-row{
+        font-size: 1.6rem;
+        margin-top: 0px;
+     //   background-color: #ccc;
+        padding-bottom:0px;
+     //  margin-bottom: 10px;
+    }
+ 
+    .inputItem{
+        
+        margin: auto;
+        margin-left: -11px!important;
+        .input-wrapper{
+         
+            border: 1px #ccc solid;
+           // margin-bottom: 10px;
+          //  margin-right: 10px!important;
+            border-radius: 7px;
+        }
+      
+        margin-bottom: 10px;
+    }
+    .datetime{
+        padding: 8px 8px 8px 10px!important;
+    }
+    .inputItem1{
+        border: 1px #ccc solid;
+        // margin-bottom: 10px;
+        .input-wrapper{
+         
+      //    padding-left: 0px!important;
+         // padding-left: -10px!important;
+        }
+        padding-left: 0px!important;
+        margin-left: 6px!important;
+      margin-bottom: 10px;
+        width: 94%;
+       
+        border-radius: 7px;
+       //  margin-right: -20px!important;
+    }
+   
+    p{
+        font-size:1.6rem; 
+       color: rgb(120, 120, 120);
+        margin-left: 5px;
+    }
+    transition: all linear 1s!important;
+  //  margin-bottom: -6px;
+  //  margin-top: -4px;
+}
+.item-md.item-block .item-inner,.item-ios.item-block .item-inner{
+    padding-right: 0px!important;
+}
+.status{
+    background-color:#6bc7a2;
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: transparent!important;
+    -webkit-box-shadow: inset 0 -1px 0 0  transparent!important;
+    box-shadow: inset 0 -1px 0 0  transparent!important;
+   // margin-right: 17px;
+ 
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    border-bottom-color: transparent!important;
+    -webkit-box-shadow: inset 0 -1px 0 0  transparent!important;
+    box-shadow: inset 0 -1px 0 0  transparent!important;
+    //margin-right: 17px;
+ 
+}
+
+.text-input-md{
+    margin: 0px;
+    margin-left: 10px!important;
+}
+div{
+    transition: all linear 1s!important;
+}
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner ,
+.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: transparent!important;
+    -webkit-box-shadow: inset 0 -1px 0 0  transparent!important;
+    box-shadow: inset 0 -1px 0 0  transparent!important;
+}

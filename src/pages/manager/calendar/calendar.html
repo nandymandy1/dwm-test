@@ -1,0 +1,38 @@
+<ion-header class="headerCss">
+  <ion-navbar hideBackButton="true">
+    <ion-title>History</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="sample-modal-page">
+  <div *ngIf="history.length==0">
+    <p class="nodatafound">No Upcoming Task Available</p>
+  </div>
+  <div *ngIf="history.length!=0">
+    <ion-list class="iconStyle">
+      <ion-item *ngFor="let list of history ; let i=index">
+        <ion-label text-wrap>
+          <ion-row>
+            <ion-col> Rating Date: {{list.ratingDate}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Rating: {{list.rating}} &nbsp;&nbsp;
+              <ion-icon *ngIf="list.isFinalScore" color="locked" name="lock"></ion-icon>
+              <ion-icon *ngIf="!list.isFinalScore" color="unlock" name="unlock"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Next Action Plan Date :{{list.nextActionPlanDate}}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="list.revisionDateNumber">
+            <ion-col col>Revision Date Number :{{list.revisionDateNumber}}</ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

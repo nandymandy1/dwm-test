@@ -1,0 +1,64 @@
+<ion-header class="headerCss">
+  <ion-navbar hideBackButton="true">
+    <ion-title>History</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="sample-modal-page">
+  <div *ngIf="history.length==0">
+    <p class="nodatafound">No Data found </p>
+  </div>
+  <div *ngIf="history.length!=0">
+    <ion-list class="iconStyle">
+      <ion-item *ngFor="let list of history ; let i=index">
+        <ion-label text-wrap>
+          <ion-row>
+            <ion-col col>Action Plan Date :{{list.actionPlanDate}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Action Plan Detail: {{list.actionPlanDetail}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col>Type :{{list.revision}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Variance Reason: {{list.varianceReason}}</ion-col>
+          </ion-row>
+
+          <!-- <ion-row *ngIf="list.hodApprovalNeeded">
+            <ion-item style="padding: 0px 5px 5px 5px;">
+              <ion-label>Hod Approval Status: {{list.hodApprovalStatus}}</ion-label>
+              <ion-toggle [(ngModel)]="editAllowedHODApprovalStatusData" (ngModelChange)="update($event,list)" *ngIf="list.editAllowedHODApprovalStatus"></ion-toggle>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+            <ion-label style="padding: 0px 5px 5px 5px;">Manager Approval Status :{{list.managerApprovalStatus}}</ion-label>
+            <ion-toggle [(ngModel)]="editAllowedManagerApprovalStatusData" (ngModelChange)="update($event,list)" *ngIf="list.editAllowedManagerApprovalStatus"></ion-toggle>
+          </ion-row> -->
+
+          <ion-list *ngIf="list.hodApprovalNeeded">
+            <ion-label>Hod Approval Status: {{list.hodApprovalStatus}}</ion-label>
+            <label class="switch" *ngIf="list.editAllowedHODApprovalStatus">
+              <input type="checkbox" [(ngModel)]="editAllowedHODApprovalStatusData" (ngModelChange)="update($event,list)">
+              <span class="slider round"></span>
+            </label>
+          </ion-list>
+
+          <ion-list>
+            <ion-label>Manager Approval Status :{{list.managerApprovalStatus}}</ion-label>
+            <label class="switch" *ngIf="list.editAllowedManagerApprovalStatus">
+              <input type="checkbox" [(ngModel)]="editAllowedManagerApprovalStatusData" (ngModelChange)="update($event,list)">
+              <span class="slider round"></span>
+            </label>
+          </ion-list>
+
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

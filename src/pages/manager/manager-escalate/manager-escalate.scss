@@ -1,0 +1,153 @@
+page-manager-escalate {
+    .my-checkbox-label{
+        margin-top: 10px;
+        }
+    .hrl{
+          background-color: #c7c7c7;
+         // width: 100%;
+          height: 10px;
+          border-bottom: 1px #9b9b9b solid;
+          border-right: 1px #9b9b9b solid;
+          border-left: 1px #9b9b9b solid;
+          margin-right: -0.8rem !important;
+          margin-left: -0.8rem !important;
+          margin-top: -8px;
+      }  
+    .status{
+        color: rgb(232, 62, 76) ;
+        text-align: right;
+        font-size: 1.4rem;
+        margin-top: -14px;
+
+    }
+        .supplier {
+            ion-row{
+                margin: 0px!important;
+                padding: 0px!important;
+                ion-col{
+                    font-size: 1.4rem;
+                    margin: 0px!important;
+                    padding: 0px!important;
+                }
+            }
+         margin-bottom: -13px;
+        }  
+        .supplier1 {
+            border-top:1px #ccc solid!important;
+                margin-top: -25px;
+        }  
+        .suppli{
+            margin-bottom: -10px;
+        }  
+        .btn{
+            padding-bottom: -15px;
+            background-color: rgb(232, 62, 76) ;
+            margin-bottom: 0px;
+            height: 40px;
+        }
+       
+        .rating{
+            //color: #6bc7a2;
+            font-size: 2.5rem;
+            margin-top: 5px;
+            text-align: left!important;
+            padding-right: 5px;
+         //   background-color: #6bc7a2;
+            ion-icon{
+                margin-top: 5px;
+                float: right;
+                text-align: right!important;
+                font-size: 2.4rem;
+                color: red;
+                font-weight: 600;
+            }
+        }
+        .action{
+            font-size: 1.4rem;
+        }
+        .showHist{
+            font-size: 1.5rem!important;
+            margin: 0px!important;
+            margin-top: 7px!important;
+            padding: 0px!important;
+        } 
+          .textarea {
+            margin-top: -100px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 15px !important;
+           
+        }
+        .desc{
+            height: 50% !important;
+            //border-radius: 12px;
+            margin: 10px;
+            padding-top: 5px;
+          //  margin-top: -3px;
+            border:1px rgb(172, 171, 171) solid!important;
+            
+        }
+        .card-md{
+            border-radius: 16px;
+        }
+        .taskList{
+            background-color: #6bc7a2;
+            height: 5px !important;
+            margin-bottom: -6px;
+            margin-top: -4px;
+        }
+        .rate{
+            border-color: red;
+        }
+        .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+            margin-left: 0;
+            margin-top: 11px;
+            margin-bottom: 10px;
+            color: rgb(232, 62, 76) ;
+        }
+        .addr{
+            color: rgb(232, 62, 76) ;
+        }
+        .label-md {
+            //margin: 0px;
+            margin-bottom: 15px;
+        }
+}
+
+//     .taskList{
+//         background-color: #6bc7a2;
+//         height: 5px !important;
+//         margin-bottom: -9px;
+//         margin-top: -5px;
+//     }
+
+//     .target{
+//         border-radius: 9px;
+//     //  margin-bottom: -6px;
+//     //  margin-top: -4px;
+//     }
+//     .btn{
+//         padding-bottom: -15px;
+//         background-color: rgb(232, 62, 76) ;
+//         margin-bottom: 0px;
+//         height: 40px;
+//     }
+//     .dash{
+//         border-radius: 12px;
+//         margin-top: 20px;
+//         opacity: 0.93;
+//     }
+//     .hrl{
+//         height: 10px;
+//         border-bottom: 1px #9b9b9b solid;
+//         border-right: 1px #9b9b9b solid;
+//         border-left: 1px #9b9b9b solid;
+//         margin-right: -0.8rem !important;
+//         margin-left: -0.4rem !important;
+//         margin-top: -4px;
+//     } 
+//     .label-md {
+//         margin: 7px;
+//         margin-bottom: 8px;
+//     }
+// }

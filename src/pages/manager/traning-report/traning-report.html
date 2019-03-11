@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Training Report</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <p class="nodatafound" *ngIf="noDataFound || trainingList">{{noDataFound}}</p>
+  <ion-card *ngFor="let list1 of summary;  let i=index">
+    <div class="taskList1">
+      <ion-row>
+        <ion-col col-2 class="percenCal1">
+          {{list1.tnf}}%
+        </ion-col>
+        <ion-col col-6 text-wrap class="percenCal">
+          {{list1.userName}}
+        </ion-col>
+        <ion-col col-4 class="percenCal2" (click)="setVisibilityFlags(i)">
+          ({{list1.attended}}/{{list1.total}}) &nbsp; <ion-icon item-right [name]="expandFlag[i]?'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!--Only for Managers-->
+    <div *ngIf="expandFlag[i] && role != 'Pilot' && role != 'Manager'">
+      <div *ngFor="let list of trainingList;  let i=index">
+        <div *ngIf="list1.userName==list.List.actorName">
+          <ion-item class="innertaskList">
+            <div class="type">{{list.List.trainingType}} Training ({{list.List.status}})</div>
+            <div class="typeT">Training : {{list.List.trainingName}}</div>
+            <div class="type1" *ngIf="list.List.locationType">Location Type &nbsp;&nbsp;:
+              &nbsp;&nbsp;{{list.List.locationType}}</div>
+            <div class="type1" *ngIf="list.List.moduleType">Module
+              Type&nbsp;&nbsp;:&nbsp;&nbsp;{{list.List.moduleType}}</div>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <!--Only for Managers-->
+
+    <!--Only for Pilots-->
+    <div *ngIf="expandFlag[i] && role == 'Pilot' || role == 'Manager'">
+      <div *ngFor="let list of pilotTrainigList;  let i=index">
+        <ion-item class="innertaskList">
+          <div class="type">{{list.trainingType}} Training ({{list.status}})</div>
+          <div class="typeT">Training : {{list.trainingName}}</div>
+          <div class="type1" *ngIf="list.locationType">Location Type &nbsp;&nbsp;:
+            &nbsp;&nbsp;{{ list.locationType }}</div>
+          <div class="type1" *ngIf="list.moduleType">Module
+            Type&nbsp;&nbsp;:&nbsp;&nbsp;{{list.moduleType}}</div>
+        </ion-item>
+      </div>
+    </div>
+    <!--Only for Pilots-->
+  </ion-card>
+
+</ion-content>

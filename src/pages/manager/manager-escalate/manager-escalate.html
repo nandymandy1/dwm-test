@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Policy Sheet Escalate</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="dash">
+    <ion-item class="select-section ">
+      <ion-label>Select user</ion-label>
+      <ion-select [(ngModel)]="userData" (ionChange)="userChange($event)">
+        <ion-option *ngFor="let user of userList" [value]='user.id'>{{user.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="generatedTo">
+      <div class="hrl"></div>
+      <ion-item class="suppli">
+        <ion-label class="MSES">
+          Additional Comment
+        </ion-label>
+      </ion-item>
+      <div class="desc">
+        <form [formGroup]="escalateForm">
+          <ion-item>
+            <ion-textarea rows="4" placeholder="Enter Additional Comment" formControlName="text" maxlength="140">
+            </ion-textarea>
+          </ion-item>
+        </form>
+      </div>
+      <button class="btn" ion-button medium full (click)="onSubmit()">Submit</button>
+    </div>
+  </ion-card>
+</ion-content>

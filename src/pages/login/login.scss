@@ -1,0 +1,154 @@
+page-login {
+    .item-md{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        background-color: transparent;
+    }
+    .item-md.item-block .item-inner{
+        
+        border-bottom: none;
+    }
+    .item-md.item-block .item-inner{
+        padding-right: 0px!important;
+    }
+    .item-md .item-button{
+        padding: 0em; 
+        height: 50px;
+        margin-top: 0px!important;
+        font-size: 1.8rem;
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+    }
+    .user{
+        margin-top: 20px;
+            padding: 15px;
+            border-top-left-radius: 15px !important;
+            border-top-right-radius: 15px !important;
+            background-color: rgb(255, 255, 255);
+          //  padding: 10px;
+            ion-item{
+                margin: 0px;
+                padding: 6px!important;
+            }
+            .submit-section{
+                height: 60px!important;
+                .item-md{
+                    padding-left: 0px!important;
+                }
+               
+                margin: 0px;
+                padding: 0px;
+                .button-md{
+                    color: #F7D54C!important;
+                    height: 60px!important;
+                }
+              //  background-color: map-get($map: $colors, $key:'primary') !important;
+                .button{
+                    height: 50px!important;
+                   margin: 0px;
+                   padding: 0px;
+                  // background-color: map-get($map: $colors, $key:'primary') !important;
+                }
+                border-bottom-left-radius: 15px !important;
+                border-bottom-right-radius: 15px !important;
+            }
+      
+    }
+  
+    ion-content{
+       
+       .danger{
+        .item-block{
+            min-height:1rem!important;
+           
+        }
+        min-height:1rem!important;
+        padding: 0px!important;
+         //margin: 6px 0px 4px 34px;
+               color: red;
+               font-family: 'Montserrat-Regular';
+       }
+       ion-list{
+           margin: 25px!important;
+       }
+     .list,.list-ios{
+
+            .input-cover{
+                position: inherit;
+            }
+           
+            ion-item{
+             
+                &.item{
+                    &.item-input{
+                        
+                        &.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus){
+                            .item-inner{ box-shadow:none; }
+                        }
+                        &.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus), 
+                        &.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus){
+                            .item-inner{ box-shadow:none;}
+                        } 
+                        .button{width: 2em;}
+                    }
+                    background: transparent;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    font-family: 'Montserrat-Light';
+                    
+                    .item-inner{ 
+                        .label{margin-right: 0;  font-family: 'Montserrat-Regular';}
+
+                        .input-wrapper{
+                            .input,.label{font-family: 'Montserrat-Light';   }
+                        }
+                    }
+                 
+                    &.item-input-has-value{
+                    }
+
+                    &.item-input-has-focus{
+                       
+                    }
+                    &.form-control{
+                       margin-top: 0px !important;
+                       padding-left: 2.6rem;
+                       border-bottom: 1px #ccc solid !important;
+                    
+                       //   .button{ margin:8px 8px 8px 8px;}                      
+                    }
+                }
+            }   
+        
+      }
+   
+    }
+    .form-control{
+        margin-top: 0px !important;
+       padding-left: 2.6rem;
+       border-bottom: 1px #ccc solid !important;
+    
+       //   .button{ margin:8px 8px 8px 8px;}                      
+    }   
+}
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-md.item-input.input-has-focus .item-inner{
+    border-bottom-color:transparent !important;
+    -webkit-box-shadow:inset 0 -1px 0 0  transparent !important;
+    box-shadow:inset 0 -1px 0 0 transparent !important;
+}
+
+.login-logo{
+    //background: transparent !important;
+    background-color: transparent !important;
+    opacity: 1;
+    margin-top: 2rem;
+  //  margin-bottom: -10px!important;
+   // padding-left: 0px;
+    img{
+        width:40%;
+        height:40%;
+    }
+}

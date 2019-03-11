@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Policy Sheet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p class="nodatafound" *ngIf="noDataFound || arrReport">{{noDataFound}}</p>
+  <ion-card class="dash" no-padding *ngFor="let p of arrReport;  let i=index">
+    <ion-item class="taskList">
+      <ion-icon style="color:#fff" (click)="setVisibilityFlags(i)" item-right
+        [name]="expandFlag[i]?'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+      <ion-label align="center" style="color: white;">{{p.monthName}} {{p.year}} <i style="color:red">({{p.status}})</i>
+      </ion-label>
+    </ion-item>
+    <ion-item class="supplier">
+      <ion-row>
+        <ion-col col-5>
+          Project Code
+        </ion-col>
+        <ion-col col-7 *ngIf="p.projectCode!='' || p.projectCode==NULL" text-wrap>
+          : {{p.projectCode}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          Supplier
+        </ion-col>
+        <ion-col col-7 *ngIf="p.supplier!='' || p.supplier==NULL" text-wrap>
+          : {{p.supplier}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item class="supplier">
+      <ion-row>
+        <ion-col col-5>
+          Activity
+        </ion-col>
+        <ion-col col-7 *ngIf="p.activityName!='' || p.activityName==NULL" text-wrap>
+          : {{p.activityName}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <div *ngIf="expandFlag[i]" class="target">
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Sub Activity
+          </ion-col>
+          <ion-col col-7 *ngIf="p.subActivityName!='' || p.subActivityName==NULL" text-wrap>
+            : {{p.subActivityName}}
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="p.sustenanceType != null">
+          <ion-col col-5>
+            Sustenance Type
+          </ion-col>
+          <ion-col col-7 text-wrap>
+            : {{p.sustenanceType}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5>
+            Pilot
+          </ion-col>
+          <ion-col col-7 *ngIf="p.pilot!='' || p.pilot==NULL" text-wrap>
+            : {{p.pilot}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5>
+            Target
+          </ion-col>
+          <ion-col col-7 *ngIf="p.target!='' || p.target==NULL" text-wrap>
+            : {{p.target}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Actual
+          </ion-col>
+          <ion-col col-7 *ngIf="p.actual!='' || p.actual==NULL" text-wrap>
+            : {{p.actual}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            LOP
+          </ion-col>
+          <ion-col col-7 *ngIf="p.lop!='' || p.lop==NULL" text-wrap>
+            : {{p.lop}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier" *ngIf="p.hoD1RemarksVisibility">
+        <ion-row>
+          <ion-col col-5>
+            HOD 1 Remarks
+          </ion-col>
+          <ion-col col-6 text-wrap>
+            : {{p.hoD1Remarks}}
+          </ion-col>
+          <ion-col col-1 text-wrap *ngIf="p.hoD1RemarksEdit">
+              <ion-icon name="custom-edit" item-right (click)="presentPrompt(p.id)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier" *ngIf="p.hoD2RemarksVisibility">
+        <ion-row>
+          <ion-col col-5>
+            HOD 2 Remarks
+          </ion-col>
+          <ion-col col-6 text-wrap>
+            : {{p.hoD2Remarks}}
+          </ion-col>
+          <ion-col col-1 text-wrap *ngIf="p.hoD2RemarksEdit">
+            <ion-icon name="custom-edit" item-right (click)="presentPrompt(p.id)"></ion-icon>
+            <!-- <ion-icon name="custom-edit" item-right (click)="onEdit(list)"></ion-icon> -->
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier" *ngIf="p.managerRemarksVisibility">
+        <ion-row>
+          <ion-col col-5>
+            Manager Remarks
+          </ion-col>
+          <ion-col col-6 text-wrap>
+            : {{p.managerRemarks}}
+          </ion-col>
+          <ion-col col-1 text-wrap *ngIf="p.managerRemarksEdit">
+              <ion-icon name="custom-edit" item-right (click)="presentPrompt(p.id)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier" *ngIf="p.actionPlanHistoryAvailable">
+        <ion-row>
+          <ion-col col-5>
+            ActionPlan history
+          </ion-col>
+          <ion-col col-7 text-wrap>
+            :&nbsp;<ion-icon class="showHist" right *ngIf="true" (click)="showActionPlanHistory(p.id)" name="ios-timer-outline">
+              &nbsp;&nbsp;View history</ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier" *ngIf="p.escalationHistoryPresent">
+        <ion-row>
+          <ion-col col-5>
+            Escalation history
+          </ion-col>
+          <ion-col col-7 text-wrap>
+            :&nbsp;<ion-icon class="showHist" right *ngIf="true" (click)="showHistory(p.id)" name="ios-timer-outline">
+              &nbsp;&nbsp;View history</ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-6>
+            <button class="btn" ion-button round full (click)="actionPlanClick(p)"
+              *ngIf="p.allowedToGenerateActionPlan">Action Plan</button>
+            <button class="btn1" ion-button round full *ngIf="!p.allowedToGenerateActionPlan">Action Plan</button>
+          </ion-col>
+          <ion-col col-6>
+            <button class="btn" ion-button round full (click)="escalatClick(p)"
+              *ngIf="p.allowedToGenerateEscalation">Escalation</button>
+            <button class="btn1" ion-button round full *ngIf="!p.allowedToGenerateEscalation">Escalation</button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </div>
+  </ion-card>
+</ion-content>

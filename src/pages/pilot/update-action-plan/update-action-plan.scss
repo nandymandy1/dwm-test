@@ -1,0 +1,66 @@
+page-update-action-plan {
+    .MSESA{
+        font-size: 1.4rem;
+    }
+   
+  .supplier{
+      margin: auto!important;
+      width: 91%!important;
+      border-radius: 6px;
+      border: 1px #ccc solid;
+     margin-left: 20px!important;
+     margin-bottom: 5px!important;
+  }
+  .supplier1{
+    border: 1px #ccc solid;
+   // margin: auto!important;
+    // height: 50% !important;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding:1px 2px 2px 2px !important;
+    width: 91%;
+    //background-color: rgb(238, 238, 238)!important;
+    margin-left: 20px;
+    margin-bottom: 5px!important;
+    margin-right: 16px!important;
+  }
+
+   .MSES{
+    color: #6bc7a2;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: transparent;
+    margin: 0px;
+    margin-left: 17px;
+    margin-top: 10px;
+    
+}
+.details{
+    background-color: rgb(109, 109, 109) ;
+    padding: 5px 15px;
+    color: #ffffff!important; 
+    border-bottom: 1px #ccc solid;
+    .actProj{
+        text-transform: uppercase;
+        color: #ffffff!important; 
+        font-size: 1.6rem;
+    }
+}
+.update{
+    opacity: 0.9;
+    border-radius: 12px;
+}
+.btn{
+    padding-bottom: -15px;
+    background-color: rgb(232, 62, 76) ;
+    margin-bottom: 0px;
+    height: 5rem!important; 
+}
+.button-md{
+    margin: 0px;
+}
+.datetime-disabled, .item-datetime-disabled ion-label {
+ opacity: 1!important; 
+    pointer-events: none;
+}
+}

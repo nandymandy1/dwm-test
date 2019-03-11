@@ -1,0 +1,226 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+    font-family: 'MavenPro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../assets/fonts/MavenPro.ttf'); // here is the path of font.
+}
+ion-icon {
+    &[class*="custom-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+        color: map-get($map: $colors, $key:'primary' );
+    }
+    // custom icons
+    &[class*="custom-dashboard"] {
+        width: 1em;
+        height: 1em;
+       // background:#adabab;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_dashboard.svg);
+    }
+    // custom icons
+    &[class*="git-pull-request"] {
+        color: rgb(108, 169, 140);
+    }
+    &[class*="custom-cal"] {
+        width: 2.8em;
+        height: 2.8em;
+        margin-left:0rem!important;
+        margin-right:0px!important;
+       
+        mask-image: url(../assets/imgs/icn_calender_schedule.svg);
+    }
+    &[class*="custom-back"] {
+        width: 1.8em;
+        height: 1.8em;
+        background:#fff;
+        mask-image: url(../assets/imgs/back.svg);
+    }
+    &[class*="custom-Audit"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_audit_menu.svg);
+    }
+    &[class*="custom-monthlyVisit"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_montly_visit_plan.svg);
+    }
+    &[class*="custom-loc"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_location_green_64.svg);
+    }
+    &[class*="custom-loc-red"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_location_red.svg);
+    }
+    &[class*="custom-menu_right"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_menu_right.svg);
+    }
+    &[class*="custom-edit"] {
+        width: 1em;
+        height: 1em;
+        margin-left:0.2rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_edit.svg);
+        color: gray;
+    }
+    &[class*="custom-morningMeet"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_morning_meeting_menu.svg);
+    }
+    &[class*="custom-trainingCal"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_training_calender_menu.svg);
+    }
+    &[class*="custom-policySheet"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_policy_sheet_menu.svg);
+    }
+    &[class*="custom-tracker"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_consolideted_tracker_menu.svg);
+    }
+    &[class*="custom-aboutUs"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_about_menu.svg);
+    }
+   
+    &[class*="custom-hamburger"] {
+        // width: 1.4em;
+        // height: 1.4em;
+        background:#fff;
+        mask-image: url(../assets/imgs/icn_menu.svg);
+    }
+
+    &[class*="custom-logout"] {
+        width: 1em;
+        height: 1em;
+        margin-left:3rem!important;
+        margin-right:0px!important;
+        mask-image: url(../assets/imgs/icn_logout_menu.svg);
+    }
+}
+.back{
+    background: #fff !important;
+}
+ion-content{
+    background: url('../assets/imgs/img_app_bg.png') no-repeat; 
+    background-position: center;
+    background-size: cover;
+    //background-color: lightgrey !important;
+}
+.toolbar-background-md {
+    border-color: #b2b2b2;
+    background: #6bc7a2;
+}
+.appList{
+    .item-inner{
+        padding: 0px!important; 
+        margin:0px!important;  
+    }
+    .item-md{
+        padding: 0px!important; 
+        margin:0px!important; 
+        // padding-right: 0px!important; 
+        // margin-right:0px!important; 
+        border-bottom: 1px #ccc solid!important; 
+    }
+  
+    .sideMenuBtn{
+        padding-left: 4rem!important; 
+    }
+
+}
+.label-md{
+    margin: 0px;
+}
+.app-login-logo{
+   background-color: #fff;
+   text-align: center!important;
+   border-bottom:1px  #d7d7d7 solid;
+   padding-top: 20px;
+   margin-bottom: 1px;
+   padding-bottom: 7px;
+      .label-md{
+          margin: 0px;
+          font-size: 2rem;
+          padding:0px; 
+          color:map-get($map: $colors, $key:'primary' )!important; 
+      }
+      p{
+        margin-top: 0px!important; 
+        font-size: 1.4rem;
+        color:map-get($map: $colors, $key:'textDarkGray' )!important; 
+      }
+    .userPic{
+       font-size: 9rem;
+       color:map-get($map: $colors, $key:'primary' ); 
+     //  background-color: #b2b2b2;
+    }
+    .div{
+        margin: 0px;
+        font-size: 1.3rem;
+        padding:0px; 
+        color:map-get($map: $colors, $key:'textDarkGray' ) !important; 
+    }
+    .select-alert{
+    .alert-title{font-size: 2rem;}
+}
+    
+}
+
+
+   

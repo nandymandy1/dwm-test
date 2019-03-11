@@ -1,0 +1,33 @@
+page-view-monthly-plan-manager {
+    .taskList{
+        background-color: #6bc7a2;
+        height: 5px !important;
+        margin-bottom: -9px;
+        margin-top: -5px;
+    }
+    .dash{
+        border-radius: 12px;
+        margin-top: 20px;
+        opacity: 0.9;
+    }
+    .cal{
+       background-color: aquamarine;
+       margin-top: 10px;
+       position: absolute;
+    }
+    .plan{
+        color: rgb(232, 62, 76) ;
+        margin-left: 10px;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 1.6rem;
+    }
+    .actual{
+        color: #6bc7a2;
+         margin-left: 10px;
+    }
+    .remark{
+        margin-left: 10px;
+        color: DarkGray; 
+    }
+}

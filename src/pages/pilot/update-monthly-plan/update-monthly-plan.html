@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Update Monthly Plan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="dash">
+    <ion-item class="taskList">
+      <ion-label align=center style="color:#fff">30th june 2018
+      </ion-label>
+    </ion-item>
+    <ion-card class="target" style="margin-top: 20px;">
+      <ion-item class="taskList">
+        <ion-label style="color: white">
+          Plan
+        </ion-label>
+      </ion-item>
+      <p  style="margin-top: 10px;margin-left: 10px"> Planned task</p>
+    </ion-card>
+
+    <ion-card class="target">
+      <ion-item class="taskList">
+        <ion-label style="color: white">
+          Actual
+        </ion-label>
+      </ion-item>
+      <p  style="margin-top: 10px">
+        <ion-textarea rows="4"  maxlength="10" placeholder="Actual work done">
+          Actual work done 
+        </ion-textarea>
+      </p>
+    </ion-card>
+    <button class="btn" ion-button medium full (click)="update()">Update</button>
+  </ion-card>
+</ion-content>

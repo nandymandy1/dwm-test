@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #25ae88;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Dashboard" class="cls-1" d="M52,12H84V36H52V12ZM12,12H44V52H12V12Zm0,48H44V84H12V60ZM52,44H84V84H52V44Z"/>
+</svg>

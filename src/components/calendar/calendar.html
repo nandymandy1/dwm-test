@@ -1,0 +1,37 @@
+
+
+<ion-slides>
+    <ion-slide>
+  
+  
+    </ion-slide>
+  </ion-slides>
+  
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>Sun</ion-col>
+      <ion-col>Mon</ion-col>
+      <ion-col>Tue</ion-col>
+      <ion-col>Wed</ion-col>
+      <ion-col>Thu</ion-col>
+      <ion-col>Fri</ion-col>
+      <ion-col>Sat</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let day of FirstWeek">{{day.getDate()}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngFor="let day of SecondWeek">{{day.getDate()}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngFor="let day of ThirdWeek">{{day.getDate()}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngFor="let day of FourthWeek">{{day.getDate()}}</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngFor="let day of FifthWeek">{{day.getDate()}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  

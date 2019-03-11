@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #25ae88;
+        stroke-width: 5px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="ic_locationOn" class="cls-1" d="M31.485,6.353A17.8,17.8,0,0,0,13.621,24.079C13.621,37.373,31.485,57,31.485,57S49.35,37.373,49.35,24.079A17.8,17.8,0,0,0,31.485,6.353Zm0,24.056a6.331,6.331,0,1,1,6.379-6.33A6.357,6.357,0,0,1,31.484,30.409Z"/>
+</svg>

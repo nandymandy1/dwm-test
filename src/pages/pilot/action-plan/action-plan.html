@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Plan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="dash">
+    <ion-list>
+    
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Previous Rating
+          </ion-col>
+          <ion-col col-7 *ngIf="rating1!=''" text-wrap>
+            : {{rating1}}
+          </ion-col>
+          <ion-col col-7 *ngIf="rating1==''">
+            : --
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Previous Rating Date
+          </ion-col>
+          <ion-col col-7 *ngIf="ratingDate!=''" text-wrap>
+            : {{ratingDate}}
+          </ion-col>
+          <ion-col col-7 *ngIf="ratingDate==''">
+            : --
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Previous Action Plan
+          </ion-col>
+          <ion-col col-7 *ngIf="nextActionPlan!=''" text-wrap>
+            : {{nextActionPlan}}
+          </ion-col>
+          <ion-col col-7 *ngIf="nextActionPlan==''">
+            : --
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item class="supplier">
+        <ion-row>
+          <ion-col col-5>
+            Action Plan Date
+          </ion-col>
+          <ion-col col-7 *ngIf="nextActionPlanDate!=''" text-wrap>
+            : {{nextActionPlanDate}}
+          </ion-col>
+          <ion-col col-7 *ngIf="nextActionPlanDate==''">
+            : --
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="supplier1">
+        <ion-label class="rating">
+          Target :{{targetPoint}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card class="dash">
+    <ion-item class="select-section">
+      <ion-icon class="iconStyle" name="calendar" item-right></ion-icon>
+      <ion-label class="action">Next Action Plan Date : </ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [max]="maxYear" [min]="minYear" [(ngModel)]="selectedDate"
+        (ionChange)="dateChange($event)"></ion-datetime>
+    </ion-item>
+    <div class="hrl"></div>
+    <ion-item class="supplier">
+      <ion-label class="MSES">
+        Enter Next Action Plan
+      </ion-label>
+    </ion-item>
+    <ion-card class="desc">
+      <form [formGroup]="actionForm">
+        <ion-item>
+          <ion-textarea rows="4" placeholder="Enter a description" formControlName="text" maxlength="500"></ion-textarea>
+        </ion-item>
+      </form>
+    </ion-card>
+    <button class="btn" ion-button medium full (click)="onSubmit()">Submit</button>
+  </ion-card>
+</ion-content>

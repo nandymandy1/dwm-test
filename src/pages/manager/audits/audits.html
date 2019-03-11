@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>Audits</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="role=='Pilot' && role!='Manager'">
+    <ion-card class="dash">
+      <ion-item class="taskList">
+        <ion-label align=center style="color: #6bc7a2">Supplier Specification
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="labell " (click)="msesAManager()">
+        <ion-label align=center>MSES-A
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="msesBManager()">
+        <ion-label align=center>MSES-B/C
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="sustenance()">
+        <ion-label align=center>SUSTENANCE
+        </ion-label>
+      </ion-item>
+      <!-- <ion-item class="arr">
+    </ion-item> -->
+    </ion-card>
+
+    <ion-card class="dash project">
+      <ion-item class="taskList">
+        <ion-label align=center style="color: #6bc7a2">Project Specification
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="labell" (click)="firewall()">
+        <ion-label align=center>Firewall
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="mma()">
+        <ion-label align=center>MMA
+        </ion-label>
+      </ion-item>
+      <!-- <ion-item class="arr">
+    </ion-item> -->
+    </ion-card>
+
+  </div>
+  <!-- -------------------- Manager Audit ------------------ -->
+  <!-- <div *ngIf="role=='Manager' && role!='Pilot'"> -->
+
+  <div *ngIf="role!='Pilot'">
+    <!-- /*********************/ -->
+    <ion-card class="dash">
+      <ion-item class="taskList">
+        <ion-label align=center style="color: #6bc7a2">Supplier Specification
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="labell " (click)="msesAManager()">
+        <ion-label align=center>MSES-A
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="msesBManager()">
+        <ion-label align=center>MSES-B/C
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="sustenance()">
+        <ion-label align=center>SUSTENANCE
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="dash project">
+      <ion-item class="taskList">
+        <ion-label align=center style="color: #6bc7a2">Project Specification
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="labell" (click)="firewall()">
+        <ion-label align=center>Firewall
+        </ion-label>
+      </ion-item>
+      <div class="hrl"></div>
+      <ion-item class="labell" (click)="mma()">
+        <ion-label align=center>MMA
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <!-- ******************************* -->
+  </div>
+</ion-content>

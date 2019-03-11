@@ -1,0 +1,51 @@
+page-calendar {
+
+    .iconStyle{
+        ion-item{ padding-top:5px;
+            padding-bottom:5px;
+            border-radius: 12px;
+        margin-bottom: 5px;}
+        ion-icon{
+            margin-left: 0!important;
+            margin-top: 7px!important;
+            margin-bottom: 7px!important;
+        } 
+        ion-label{
+            display: block;
+            //font-size: 1.3rem;
+            width: 100%!important;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0px;
+            margin: 0px;
+         }
+         .day{
+            color: #219868;
+            font-weight: 600!important;
+            font-size: 1.8rem;
+        }
+        .mon{
+            color: #219868;
+            
+        }
+        .actProj{
+            color: #d84646; 
+            font-size: 1.3rem; 
+        }
+    }
+    .item.item-block .item-inner{
+        border-bottom: 0px solid #dedede; 
+    }
+    .sample-modal-page {
+        padding: 40px!important;
+     //  margin: 30px; 
+        background: rgba(36, 36, 36, 0.8);
+    }
+    .headerCss{
+        background-color: transparent!important;
+        .toolbar-background{
+            background-color: transparent!important;
+        }
+    }
+}

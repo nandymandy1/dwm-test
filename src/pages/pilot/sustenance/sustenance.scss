@@ -1,0 +1,117 @@
+page-sustenance {
+    .hrl{
+        //  background-color: #9b9b9b;
+         // width: 100%;
+          height: 10px;
+          border-bottom: 1px #9b9b9b solid;
+          border-right: 1px #9b9b9b solid;
+          border-left: 1px #9b9b9b solid;
+          margin-right: -0.8rem !important;
+          margin-left: -0.8rem !important;
+          margin-top: -8px;
+      }  
+    .dash{
+        border-radius: 12px;
+        }
+      
+        .supplier {
+            ion-row{
+                margin: 0px!important;
+                padding: 0px!important;
+                ion-col{
+                    font-size: 1.4rem;
+                    margin: 0px!important;
+                    padding: 0px!important;
+                }
+            }
+         margin-bottom: -13px;
+        }  
+        .supplier1 {
+                border-top:1px #ccc solid!important;
+                margin-top: 10px;
+        }    
+        .btn{
+            padding-bottom: -15px;
+            background-color: rgb(232, 62, 76) ;
+            margin-bottom: 0px;
+            height: 40px;
+        }
+       
+        .rating{
+            //color: #6bc7a2;
+            font-size: 2.4rem;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .action{
+            font-size: 1.4rem;
+        }
+          .textarea {
+            margin-top: -100px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 15px !important;
+           
+        }
+        .desc{
+            height: 50% !important;
+            border-radius: 12px;
+            margin-top: -3px;
+            border-color: gray;
+        }
+        .taskList{
+            background-color: #6bc7a2;
+          //  height: 5px !important;
+             margin-bottom: -6px;
+             font-weight: 500;
+            // margin-top: -4px;
+            color: white;
+        }
+        .rate{
+            border-color: red;
+        }
+        .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+            margin-left: 0;
+            margin-top: 11px;
+            margin-bottom: 10px;
+            color: rgb(232, 62, 76) ;
+        }
+        .addr{
+            color: rgb(232, 62, 76) ;
+        }
+        .MSESA{
+            font-size: 1.4rem;
+        }
+        page-action-plan .supplier {
+            margin-top: 0px !important;
+        }
+       
+        .MSES{
+            color: #6bc7a2;
+        }
+        sup{
+            margin-left: 10px;
+
+            //text-align: end !important;
+        }
+        .list-md > .item-block:last-child .item-inner, .list-md > .item-wrapper:last-child ion-label, .list-md > .item-wrapper:last-child .item-inner {
+            border-bottom: 0;
+            margin-bottom: 5px;
+        }
+        .inputText{
+            margin-left:40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px lightgray solid;
+            // border-right: 1px lightgray solid;
+            // border-left: 1px lightgray solid; 
+            // border-top: 1px lightgray solid;
+
+    }  
+    .text-input-md {
+        margin: 7px;}
+        .label-md {
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+}

@@ -1,0 +1,44 @@
+.dash {
+  border-radius: 12px;
+}
+
+ion-card-header {
+  background-color: #6bc7a2 !important;
+  height: 13px;
+  color: #fff;
+}
+
+.taskList {
+  background-color: #6bc7a2;
+  height: 5px !important;
+  margin-bottom: -6px;
+  margin-top: -4px;
+}
+
+.status-danger {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: red;
+}
+
+.status-danger {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: green;
+}
+
+.editable-request {
+}
+
+.btn1-danger {
+  background-color: rgb(206, 14, 14);
+  margin-bottom: 0px;
+  height: 40px;
+}
+
+
+.btn1-danger:hover {
+  background-color: rgb(236, 66, 66) !important;
+}

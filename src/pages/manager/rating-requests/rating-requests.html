@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>Rating Requests</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="ratings != undefined">
+    <ion-card *ngFor="let rating of ratings" class="dash">
+      <ion-item class="taskList">
+        <ion-label *ngIf="rating.status == 'Approved'; else pending" align=center style="color:green">{{ rating.status
+          }}
+        </ion-label>
+        <ng-template #pending>
+          <ion-label align=center style="color:red;">{{ rating.status }}
+          </ion-label>
+        </ng-template>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label text-wrap>
+            <p> Pilot: {{ rating.pilot.firstName }} </p>
+            <p> Manager: {{ rating.manager.firstName }} </p>
+            <p> Start Date: {{ rating.startDate }} </p>
+            <p> End Date: {{ rating.endDate }} </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-item *ngIf="role == 'HOD2' && rating.allowedToUpdateStatus" class="editable-request">
+        <ion-row>
+          <ion-col col-6>
+              <button class="btn1" ion-button round full (click)="approveOrReject(rating.id, 'Approved')">Approve</button>
+          </ion-col>
+          <ion-col col-6>
+              <button class="btn1 btn1-danger" ion-button round full (click)="approveOrReject(rating.id, 'NotApproved')">Reject</button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
